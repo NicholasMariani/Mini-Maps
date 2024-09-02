@@ -1,0 +1,165 @@
+<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_cyclic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        android:layout_centerInParent="true"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="@color/dark_grey"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="#FFFFFF"
+        app:itemTextColor="#FFFFFF"
+        app:menu="@menu/navigation" />
+
+    <!--<android.support.design.widget.AppBarLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:alpha="3"-->
+        <!--android:background="@color/opaque">-->
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/my_toolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:theme="@style/Theme.AppCompat.Light">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/search"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:src="@drawable/search" />-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/layers"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_alignTop="@+id/search"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:paddingEnd="20dp"-->
+                    <!--android:src="@drawable/layers" />-->
+            <!--</RelativeLayout>-->
+        <!--</android.support.v7.widget.Toolbar-->>-->
+    <!--</android.support.design.widget.AppBarLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/bar"
+        android:background="@color/opaque"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/search" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/layers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/search"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/layers" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/navigate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Navigate"
+            android:textSize="20sp"
+            android:theme="@style/Widget.AppCompat.ActionButton"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/busy_rating"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Busy Rating"
+            android:textSize="20sp"
+            android:theme="@style/Widget.AppCompat.ActionButton"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/directions"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Directions"
+            android:textSize="20sp"
+            android:theme="@style/Widget.AppCompat.ActionButton"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/stepView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="16dp"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="70dp"-->
+        <!--android:background="@color/black"-->
+        <!--android:foreground="#FFFFFF"-->
+        <!--android:visibility="invisible"/>-->
+</RelativeLayout>

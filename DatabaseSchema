@@ -1,0 +1,76 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema isItBusy
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema isItBusy
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `isItBusy` DEFAULT CHARACTER SET utf8 ;
+USE `isItBusy` ;
+
+-- -----------------------------------------------------
+-- Table `isItBusy`.`Person`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `isItBusy`.`Person` (
+  `Pid` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `accuracy` INT NULL,
+  PRIMARY KEY (`Pid`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `isItBusy`.`Location`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `isItBusy`.`Location` (
+  `Lid` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `streetAddress` VARCHAR(45) NULL,
+  `city` VARCHAR(45) NULL,
+  `state` VARCHAR(45) NULL,
+  `type` VARCHAR(45) NULL,
+  PRIMARY KEY (`Lid`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `isItBusy`.`Person_Location`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `isItBusy`.`Person_Location` (
+  `Person_Pid` INT NOT NULL,
+  `Location_Lid` INT NOT NULL,
+  `rating` INT NULL,
+  `time` DATETIME NULL,
+  PRIMARY KEY (`Person_Pid`, `Location_Lid`),
+  INDEX `fk_Person_has_Location_Location1_idx` (`Location_Lid` ASC),
+  INDEX `fk_Person_has_Location_Person_idx` (`Person_Pid` ASC),
+  CONSTRAINT `fk_Person_has_Location_Person`
+    FOREIGN KEY (`Person_Pid`)
+    REFERENCES `isItBusy`.`Person` (`Pid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Person_has_Location_Location1`
+    FOREIGN KEY (`Location_Lid`)
+    REFERENCES `isItBusy`.`Location` (`Lid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `isItBusy`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `isItBusy`.`user` (
+  `username` (16) NOT NULL,
+  `email` (255) NULL,
+  `password` (32) NOT NULL,
+  `create_time`  NULL DEFAULT CURRENT_TIMESTAMP);
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

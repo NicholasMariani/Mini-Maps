@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Mini Maps</string>
+    <string name="title_activity_maps">Mini Maps</string>
+    <string name="fragment_map__search">Search...</string>
+    <!--Home-->
+    <string name="label_destination">Destination</string>
+    <string name="default_location">No Location Set</string>
+    <string name="label_set_location">Search Destination</string>
+    <string name="label_busy_rating">Current Busy Rating</string>
+    <string name="label_rate_your_location">How busy is your location?</string>
+    <string name="label_empty">Empty</string>
+    <string name="label_very_busy">Very Busy</string>
+    <!--Navigation-->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_history">History</string>
+    <!--History-->
+    <string name="label_settings_title">Search History</string>
+    <string name="label_clear">Clear</string>
+    <!--Favorites-->
+    <string name="label_favorites_title">Favorites</string>
+    <string name="label_address_tmp">Address</string>
+    <string name="label_city_state_zip_tmp">City, State, Zip</string>
+    <string name="label_country_tmp">Country</string>
+</resources>
