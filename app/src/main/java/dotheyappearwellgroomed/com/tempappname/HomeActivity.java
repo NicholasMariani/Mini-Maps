@@ -168,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
             showRateLocationView();
         }
 
-        Places.initialize(getApplicationContext(), "AIzaSyBMEW8o8MSjVbuP6Ybh82TjTyee0i1zj6Y");
+        Places.initialize(getApplicationContext(), "*");
 
 // Create a new Places client instance.
         PlacesClient placesClient = Places.createClient(this);

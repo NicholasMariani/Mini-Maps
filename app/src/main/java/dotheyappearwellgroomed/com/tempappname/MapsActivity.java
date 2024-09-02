@@ -154,7 +154,7 @@ public class MapsActivity extends AppCompatActivity
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
-        Places.initialize(getApplicationContext(), "AIzaSyBMEW8o8MSjVbuP6Ybh82TjTyee0i1zj6Y");
+        Places.initialize(getApplicationContext(), "*");
 
         mGeoDataClient = Places.createClient(this);
 
